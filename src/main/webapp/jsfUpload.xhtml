@@ -29,11 +29,15 @@
             </li>
             
         </ul>
-        <h:form enctype="multipart/form-data">
+        <hr/>
+        <hr/>
+        <h:form enctype="multipart/form-data" style="font-size: 1.3em;">
             <h:inputFile value="#{imagesController.file}" />
             <h:commandButton value="submit" action="#{imagesController.submit}" />
             <h:commandButton value="Test" action="#{imagesController.test}" />
             <br/>
+        <hr/>
+        <hr/>
             <o:graphicImage value="#{imagesController.getBytes()}" dataURI="true" />
         </h:form>
     </h:body>
