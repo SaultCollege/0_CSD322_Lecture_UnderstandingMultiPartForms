@@ -4,6 +4,7 @@
 ###Part I - Introduction and html only solution
 >>>>####Read this article for an introduction to multi-part form data
 >>>>####https://docs.oracle.com/javaee/6/tutorial/doc/glraq.html
+
 ###Part II - JSF solution
 >>>>####http://stackoverflow.com/questions/15074465/how-to-populate-hgraphicimage-value-with-image-content-from-database"
 >>>>####http://showcase.omnifaces.org/components/graphicImage
