@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:of="http://omnifaces.org/functions"
+      >
+    <h:head>
+        <title>File Upload : JSF based upload</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/> 
+    </h:head> 
+    <h:body>
+        <h1>File Uploads : <h:link value="back..." outcome="index"/></h1>
+        <h2>Demonstrates Multipart Form Uploads (multipart/form-data)</h2>
+        <h3>Part II - JSF solution</h3>
+        <h4><a href="http://stackoverflow.com/questions/15074465/how-to-populate-hgraphicimage-value-with-image-content-from-database">http://stackoverflow.com/questions/15074465/how-to-populate-hgraphicimage-value-with-image-content-from-database</a></h4>
+        <h4><a href="http://showcase.omnifaces.org/components/graphicImage">http://showcase.omnifaces.org/components/graphicImage</a></h4>
+        <ul>
+            <li>
+                Uploads are handled on the server using CDI managed bean (jsfclasses.ImagesController)
+            </li>
+            <li>
+                Images are stored in a mysql database.  See webroot\mysql for script to create database table
+            </li>
+            <li>
+                Uses omnifaces o:graphicImage tag to display image retrieved via the bean
+                See <a href="http://stackoverflow.com/questions/15074465/how-to-populate-hgraphicimage-value-with-image-content-from-database">http://stackoverflow.com/questions/15074465/how-to-populate-hgraphicimage-value-with-image-content-from-database</a>
+            </li>
+            
+        </ul>
+        <h:form enctype="multipart/form-data">
+            <h:inputFile value="#{imagesController.file}" />
+            <h:commandButton value="submit" action="#{imagesController.submit}" />
+            <h:commandButton value="Test" action="#{imagesController.test}" />
+            <br/>
+            <o:graphicImage value="#{imagesController.getBytes()}" dataURI="true" />
+        </h:form>
+    </h:body>
+</html>
+

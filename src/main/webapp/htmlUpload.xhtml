@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>File Upload : html only</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/> 
+    </h:head> 
+    <h:body>
+        <h1>File Uploads : <h:link value="back..." outcome="index"/></h1>
+        <h2>Demonstrates Multipart Form Uploads (multipart/form-data)</h2>
+        <h3>Part I - Introduction and html only solution</h3>
+        <ul>
+            <li>
+                Uploads are handled on the server using a servlet (servlets.FileUploadServlet) which is mapped to the URL /upload
+            </li>
+            <li>
+                Images aren't displayed, just uploaded.  Peruse servlet code to see how it works
+            </li>
+        </ul>
+        <form method="POST" action="upload" enctype="multipart/form-data">
+            File: <input type="file" name="file" id="file" /> <br />
+            Destination: <input type="text" value="/tmp" name="destination" />
+            <br />
+            <input type="submit" value="Upload" name="upload" id="upload" />
+        </form>
+    </h:body>
+</html>
+
